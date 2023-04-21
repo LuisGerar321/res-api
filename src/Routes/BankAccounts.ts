@@ -16,7 +16,7 @@ router.get("/", getAllBankAccounts);
 
 router.get("/:id", getBankAccountById);
 
-router.put("/:id", updateBankAccount);
+router.put("/:userA/:userB", updateBankAccount);
 
 router.delete("/:id", deleteBankAccounts);
 

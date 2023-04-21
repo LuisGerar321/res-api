@@ -55,12 +55,12 @@ export const getBankAccountById: RequestHandler = async (req, res, next) => {
 
 export const updateBankAccount: RequestHandler = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    await BankAccounts.update({ ...req.body }, { where: { id } });
-    const updatedBankAccounts: BankAccounts | null = await BankAccounts.findByPk(id);
+    const { userA, userB} = req.params;
+    const { founds } = req.body;
+
     return res
       .status(200)
-      .json({ message: "BankAccount updated successfully", data: updatedBankAccounts });
+      .json({ message: "BankAccount updated successfully", data: { }});
   } catch (error) {
     console.log(error);
     return res.status(500).send({message: error, data: {}});
